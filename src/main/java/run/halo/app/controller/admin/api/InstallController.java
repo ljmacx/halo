@@ -27,10 +27,7 @@ import run.halo.app.model.support.CreateCheck;
 import run.halo.app.service.*;
 import run.halo.app.utils.ValidationUtils;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Installation controller.
@@ -191,7 +188,9 @@ public class InstallController {
 
     private User createUser(InstallParam installParam) {
         // Get user
-        return userService.getCurrentUser().map(user -> {
+        Optional<User> userOptinal = userService.getCurrentUser();
+
+        return userOptinal.map(user -> {
             // Update this user
             installParam.update(user);
             // Set password manually
