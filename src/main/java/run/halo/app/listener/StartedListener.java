@@ -3,17 +3,20 @@ package run.halo.app.listener;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationStartedEvent;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.util.ResourceUtils;
 import run.halo.app.config.properties.HaloProperties;
+import run.halo.app.model.properties.BlogProperties;
 import run.halo.app.model.properties.PrimaryProperties;
 import run.halo.app.service.OptionService;
 import run.halo.app.service.ThemeService;
 import run.halo.app.service.UserService;
 import run.halo.app.utils.FileUtils;
+import run.halo.app.utils.HaloUtils;
 
 import java.net.URI;
 import java.nio.file.*;
@@ -42,6 +45,9 @@ public class StartedListener implements ApplicationListener<ApplicationStartedEv
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private ApplicationContext applicationContext;
+
     @Override
     public void onApplicationEvent(ApplicationStartedEvent event) {
         // save halo version to database
@@ -50,7 +56,8 @@ public class StartedListener implements ApplicationListener<ApplicationStartedEv
     }
 
     private void printStartInfo() {
-        String blogUrl = optionService.getBlogBaseUrl();
+        //String blogUrl = optionService.getBlogBaseUrl();
+        String blogUrl = getSiteUrl();
 
         log.info("Halo started at         {}", blogUrl);
         log.info("Halo admin started at   {}/admin", blogUrl);
@@ -59,6 +66,12 @@ public class StartedListener implements ApplicationListener<ApplicationStartedEv
         }
     }
 
+    private String getSiteUrl() {
+        String serverPort = applicationContext.getEnvironment().getProperty("server.port", "8080");
+        String url =  String.format("http://%s:%s", HaloUtils.getMachineIP(), serverPort);
+        optionService.saveProperty(BlogProperties.BLOG_URL, url);
+        return url;
+    }
     /**
      * Init internal themes
      */
