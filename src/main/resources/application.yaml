@@ -9,6 +9,7 @@ server:
   servlet:
     session:
       timeout: 86400s
+    context-path: /
   compression:
     enabled: true
     mime-types: application/javascript,text/css,application/json,application/xml,text/html,text/xml,text/plain
@@ -53,6 +54,15 @@ spring:
   mvc:
     favicon:
       enabled: false
+  redis:
+    host: localhost
+    database: 0
+    port: 6379
+    lettuce:
+      pool:
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
 logging:
   level:
     run.halo.app: INFO
