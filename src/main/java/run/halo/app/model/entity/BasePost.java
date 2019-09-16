@@ -27,6 +27,11 @@ public class BasePost extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name="brand_id", columnDefinition = "int default 0")
+    private Integer brandId;
+
+    @Column(name = "model_id", columnDefinition = "int default 0")
+    private Integer modelId;
     /**
      * Post title.
      */

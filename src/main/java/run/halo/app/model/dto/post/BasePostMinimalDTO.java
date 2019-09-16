@@ -35,4 +35,8 @@ public class BasePostMinimalDTO implements OutputConverter<BasePostMinimalDTO, B
     private Date createTime;
 
     private Date editTime;
+
+    private Integer brandId;
+
+    private Integer modelId;
 }

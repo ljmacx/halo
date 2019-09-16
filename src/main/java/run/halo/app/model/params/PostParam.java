@@ -51,6 +51,10 @@ public class PostParam implements InputConverter<Post> {
     @Min(value = 0, message = "Post top priority must not be less than {value}")
     private Integer topPriority = 0;
 
+    private Integer brandId = 0;
+
+    private Integer modelId = 0;
+
     private Date createTime;
 
     private PostCreateFrom createFrom = PostCreateFrom.ADMIN;

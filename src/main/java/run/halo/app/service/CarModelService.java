@@ -14,5 +14,5 @@ import java.util.List;
 public interface CarModelService extends CrudService<CarModel, Integer> {
     CarModelDTO convertTo(@NonNull CarModel model);
     List<CarModelDTO> convertTo(@Nullable List<CarModel> models);
-
+    List<CarModel> getListByBrandId(Integer brandId);
 }

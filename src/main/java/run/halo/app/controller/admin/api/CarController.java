@@ -82,6 +82,11 @@ public class CarController {
         return carModelService.convertTo(carModelService.listAll(sort));
     }
 
+    @GetMapping("/model/blist")
+    public List<? extends CarModelDTO> listAll(@RequestParam("brandId") Integer brandId) {
+        return carModelService.convertTo(carModelService.getListByBrandId(brandId));
+    }
+
     @PostMapping("/model/addModel")
     public CarModelDTO createCarModel(@Valid @RequestBody CarModelParam modelParam) {
         // Convert to tag

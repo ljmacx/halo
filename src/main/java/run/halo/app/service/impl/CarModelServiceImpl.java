@@ -2,6 +2,7 @@ package run.halo.app.service.impl;
 
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
+import run.halo.app.exception.NotFoundException;
 import run.halo.app.model.dto.CarModelDTO;
 import run.halo.app.model.dto.CategoryDTO;
 import run.halo.app.model.entity.CarModel;
@@ -39,4 +40,9 @@ public class CarModelServiceImpl extends AbstractCrudService<CarModel, Integer> 
                 .map(this::convertTo)
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public List<CarModel> getListByBrandId(Integer brandId) {
+        return carModelRepository.getByBrandId(brandId).orElseThrow(() -> new NotFoundException("该品牌不存在").setErrorData(brandId));
+   }
 }
