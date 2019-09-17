@@ -1,9 +1,9 @@
 <#list posts.content as post>
     <div class="post animated fadeInDown">
         <div class="post-title">
-            <h3>
-                <a href="${context!}/archives/${post.url}">${post.title}</a>
-            </h3>
+            <h4>
+                <a href="javascript:openNewWin('${context!}/archives/${post.url}', '${post.title}')">${post.title}</a>
+            </h4>
         </div>
         <div class="post-content">
             <div class="p_part">

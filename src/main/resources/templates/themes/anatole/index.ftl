@@ -31,4 +31,10 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function openNewWin(url,title)
+    {
+        window.open(url,title);
+    }
+    </script>
 <@footer></@footer>
