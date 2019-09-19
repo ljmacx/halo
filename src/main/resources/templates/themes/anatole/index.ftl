@@ -1,6 +1,6 @@
 <#include "module/macro.ftl">
 <@head title="${options.blog_title!'Anatole'}" keywords="${options.seo_keywords!'Anatole'}" description="${options.seo_description!'Anatole'}"></@head>
-<#include "module/sidebar.ftl">
+<#--<#include "module/sidebar.ftl">-->
 <div class="main">
     <#include "module/page-top.ftl">
     <div class="autopagerize_page_element">
@@ -35,6 +35,7 @@
     function openNewWin(url,title)
     {
         window.open(url,title);
+         console.log('测试啊 9.39');
     }
     </script>
 <@footer></@footer>

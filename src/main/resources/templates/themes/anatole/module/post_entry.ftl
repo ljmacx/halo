@@ -5,6 +5,11 @@
                 <a href="javascript:openNewWin('${context!}/archives/${post.url}', '${post.title}')">${post.title}</a>
             </h4>
         </div>
+        <#if post.thumbnail?length gt 0>
+            <div class="post-thumbnail">
+                <img src="${post.thumbnail}">
+            </div>
+        </#if>
         <div class="post-content">
             <div class="p_part">
                 <p>${post.summary!}...</p>

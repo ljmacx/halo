@@ -1,6 +1,6 @@
 <#include "module/macro.ftl">
 <@head title="归档 · ${options.blog_title!'Anatole'}" keywords="文章归档,${options.seo_keywords!'Anatole'}" description="${options.seo_description!'Anatole'}"></@head>
-<#include "module/sidebar.ftl">
+<#--<#include "module/sidebar.ftl">-->
 <div class="main">
     <#include "module/page-top.ftl">
     <div class="autopagerize_page_element">
@@ -14,7 +14,7 @@
                                 <#list archive.posts?sort_by("createTime")?reverse as post>
                                     <div class="listing-item">
                                         <div class="listing-post">
-                                            <a href="${context!}/archives/${post.url!}" title="${post.title!}">${post.title!}</a>
+                                            <a href="javascript:openNewWin('${context!}/archives/${post.url!}','${post.title!}')">${post.title!}</a>
                                             <div class="post-time">
                                                 <span class="date">${post.createTime?string("yyyy-MM-dd")}</span>
                                             </div>
@@ -29,4 +29,11 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function openNewWin(url,title)
+    {
+        window.open(url,title);
+        console.log('测试啊 9.39');
+    }
+</script>
 <@footer></@footer>

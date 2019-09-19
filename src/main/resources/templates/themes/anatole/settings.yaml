@@ -64,7 +64,7 @@ style:
       name: icon
       label: 右上角图标
       type: text
-      default: '/anatole/source/images/logo.png'
+      default: '/anatole/source/images/56cars.png'
     post_title_uppper:
       name: post_title_uppper
       label: 文章标题大写
