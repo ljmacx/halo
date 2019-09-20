@@ -2,7 +2,7 @@
 <@head title="归档 · ${options.blog_title!'Anatole'}" keywords="文章归档,${options.seo_keywords!'Anatole'}" description="${options.seo_description!'Anatole'}"></@head>
 <#--<#include "module/sidebar.ftl">-->
 <div class="main">
-    <#include "module/page-top.ftl">
+    <#include "module/page-top-new.ftl">
     <div class="autopagerize_page_element">
         <div class="content">
             <div class="archive animated fadeInDown">

@@ -2,7 +2,7 @@
 <@head title="${options.blog_title!'Anatole'}" keywords="${options.seo_keywords!'Anatole'}" description="${options.seo_description!'Anatole'}"></@head>
 <#--<#include "module/sidebar.ftl">-->
 <div class="main">
-    <#include "module/page-top.ftl">
+    <#include "module/page-top-new.ftl">
     <div class="autopagerize_page_element">
         <div class="content">
             <#include "module/post_entry.ftl">

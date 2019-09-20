@@ -33,7 +33,7 @@
             background-color: #f6f8fa;
         }
     </style>
-    <#include "module/page-top.ftl">
+    <#include "module/page-top-new.ftl">
     <div class="autopagerize_page_element">
         <div class="content">
             <div class="post-page">
