@@ -43,6 +43,6 @@ public class CarModelServiceImpl extends AbstractCrudService<CarModel, Integer> 
 
     @Override
     public List<CarModel> getListByBrandId(Integer brandId) {
-        return carModelRepository.getByBrandId(brandId).orElseThrow(() -> new NotFoundException("该品牌不存在").setErrorData(brandId));
+        return carModelRepository.getByBrandId(brandId).orElseThrow(() -> new NotFoundException("该品牌车型为空").setErrorData(brandId));
    }
 }
