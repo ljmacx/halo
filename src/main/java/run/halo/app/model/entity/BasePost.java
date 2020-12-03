@@ -35,6 +35,12 @@ public class BasePost extends BaseEntity {
     /**
      * Post title.
      */
+    @Column(name = "brand_name", columnDefinition = "varchar(32) not null")
+    private String brandName;
+
+    @Column(name = "model_name", columnDefinition = "varchar(32) not null")
+    private String modelName;
+
     @Column(name = "title", columnDefinition = "varchar(100) not null")
     private String title;
 

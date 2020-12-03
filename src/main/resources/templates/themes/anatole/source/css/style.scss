@@ -128,16 +128,16 @@ a:hover, a:active {
 .content {
 	height: auto;
 	float: left;
-	//width: 60%;
+	width: 60%;
 	margin-top:70px;
-	margin-left: 100px;
-	margin-right: 100px;
+	margin-left: 20%;
+	//margin-right: 100px;
 }
 
 .page-top{
-	width: 100%;
+	width: 60%;
 	position: fixed;
-	left: 0;
+	left: 20%;
 	z-index: 3;
 	background-color: #fff;
 	height: 60px;
@@ -168,7 +168,7 @@ a:hover, a:active {
 	}
 
 	.information{
-		float: right;
+		float: left;
 		padding-top: 12px;
 		padding-right: 20px;
 

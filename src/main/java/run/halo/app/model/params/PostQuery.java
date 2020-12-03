@@ -27,4 +27,8 @@ public class PostQuery {
      */
     private Integer categoryId;
 
+    private Integer brandId;
+
+    private Integer modelId;
+
 }

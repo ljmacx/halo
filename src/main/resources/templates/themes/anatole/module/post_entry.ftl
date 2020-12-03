@@ -31,6 +31,10 @@
                             <a href="${context!}/tags/${tag.slugName}" class="tag">&nbsp;${tag.name}</a>
                         </#list>
                     </#if>
+                    <#if post.brandId?length gt 0>
+                        <i class="fa fa-tag"></i>
+                        <a href="${context!}/album?bId=${post.brandId}" class="tag">${post.brandName}</a>
+                    </#if>
                 </div>
             </div>
         </div>
